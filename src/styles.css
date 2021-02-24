@@ -1,0 +1,55 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.background-red {
+  background-color: rgba(255, 0, 0, 0.788);
+}
+
+.background-blue {
+  background-color: rgb(8, 8, 83);
+  color: aliceblue;
+}
+
+h1 {
+  color: sienna;
+  background: navajowhite;
+}
+
+h3, .mg, .btn, .total {
+  margin: 7px;
+}
+
+h3 {
+  color: darkblue;
+  font-size: 1.5rem;
+
+}
+
+.mg {
+  color: deeppink;
+
+}
+.checkout {
+  color: indianred;
+  font-size: 1.2rem;
+}
+
+.total {
+  color: yellowgreen;
+  font-size: 1.4rem;
+  
+
+}
+
+.btn {
+  color: dimgray;
+  background: aquamarine;
+  padding: 2px 13px;
+}
+
+.warning {
+  color: orangered;
+  text-transform: uppercase;
+  font-weight: 700;
+}
