@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {connect, useDispatch, useSelector} from 'react-redux';
 import {addToCartAction, removeFromCartAction, setAlertAction} from '../redux/cartActions'
+import { fetchUsers } from "../reduxThunk/thunk";
 
 const items = [
   {
@@ -27,6 +28,8 @@ const Shop = ({cart, cartTotal, addToCartAction, removeFromCartAction}) => {
   //const [cartTotal, setCartTotal] = useState(0);
 
   const { alert } = useSelector((state)=> state.alertReducer);
+  const { users } = useSelector((state)=> state.userReducer);
+  const {first, last} = users
   const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -81,9 +84,17 @@ const Shop = ({cart, cartTotal, addToCartAction, removeFromCartAction}) => {
     </div>
   ));
 
+  const callForEmployee = () => {
+      dispatch(fetchUsers());
+  };
+
   return (
     <div>
       <h3>STORE</h3>
+      <h4>Employee: {first} {last}</h4>
+     
+      
+      <input className='btn' type="submit" value="Find Employee" onClick={() => callForEmployee()} />
       <div className='mg'>{listItems}</div>
       <h3>CART</h3>
       <div className='checkout'>{cartItems}</div>
